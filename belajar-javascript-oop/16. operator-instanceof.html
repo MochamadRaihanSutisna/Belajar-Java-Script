@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operataor InstanceOf</title>
+</head>
+<body style="background-color: black;">
+
+    <script>
+
+        /*
+        
+            Operator InstanceOf
+                > Kadang ada kasus kita ingin mengecek apakah sebuah object merupakan instance dari class tertentu atau bukan
+                > Kita tidak bisa menggunakan operator typeOf, karena object dari class. jika kita gunakan operator typeof, hasilnya adalah "object"
+                > Operator instanceof akan menghasilkan boolean, true jika benar object tersebut adalah instance objectnya, atau false jika bukan
+
+        */
+
+        class Employee {
+
+        }
+
+        class Manager {
+
+        }
+
+        const raihan = new Employee();
+        const dewi = new Manager();
+
+        console.info(typeof raihan);
+        console.info(typeof dewi);
+
+        console.info(raihan instanceof Employee); //true
+        console.info(raihan instanceof Manager); //false
+
+        console.info(dewi instanceof Employee); //false
+        console.info(dewi instanceof Manager);  //true
+
+
+        /*
+        
+            Operator instanceof di class Inheritance
+                > Operator instanceof mendukung class inheritance, artinya instanceof juga bisa digunakan untuk mengecek, apakah sebuah object adalah instance dari class tertentu dari class tertentu, atau turunan dari class tertentu?
+
+        */
+
+        {
+
+            class Employee {
+
+            }
+
+            class Manager extends Employee {
+
+            }
+
+            const raihan = new Employee();
+            const dewi = new Manager();
+
+            console.info(typeof raihan);
+            console.info(typeof dewi);
+
+            console.info(raihan instanceof Employee); //true
+            console.info(raihan instanceof Manager); //false
+
+            console.info(dewi instanceof Employee); //true
+            console.info(dewi instanceof Manager); //true
+        }
+
+    </script>
+    
+</body>
+</html>

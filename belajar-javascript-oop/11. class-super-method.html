@@ -26,6 +26,10 @@
             paint2() {
                 console.info("Example Paint Shape");
             }
+
+            paint3() {
+                console.info("Example paint Shape 1.0");
+            }
         }
 
         class Circle extends Shape {
@@ -35,8 +39,20 @@
             }
         }
 
+        
+        class Example extends Shape {
+            paint() {
+                super.paint();
+                console.info("Paint Circle 1.0");
+            }
+        }
+
         const circle = new Circle();
         circle.paint();
+
+        const example = new Example();
+        example.paint();
+
 
     </script>
     
